@@ -10,12 +10,9 @@
 </head>
 
 <body>
-    <?php include 'components/_header.php'; ?>
-    <?php include 'components/_login.php'; ?>
-    <?php include 'components/_dbconnect.php'; ?>
+    <?php include '_header.php'; ?>
     <div class="container">
-
-        <h2 class="text-center my-3"> iTech- Categories</h2>
+    <h2 class="text-center my-3"> iTech- Categories</h2>
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -38,6 +35,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+           
         </div>
         <div class="row">
             <div class="col-md-4">
