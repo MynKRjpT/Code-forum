@@ -4,11 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>Welcome to iTech - Coding Forum</title>
+    <title>Welcome to iDiscuss - Coding Forums</title>
     <style>
     .container{
       min-height: 87vh;
@@ -16,9 +14,8 @@
     </style>
   </head>
   <body>
-  <?php include '_dbconnect.php';?>
-  <?php include '_header.php';?>
-  
+  <?php include 'partials/_dbconnect.php';?>
+  <?php include 'partials/_header.php';?>
 <div class="container my-3">
 <h1 class="text-center">Contact Us</h1>
 <form>
@@ -50,12 +47,10 @@
     <label for="exampleFormControlTextarea1">Example textarea</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
-
   <button class="btn btn-success">Submit</button>
 </form>
-
 </div>
-  <?php include '_footer.php';?> 
+  <?php include 'partials/_footer.php';?> 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

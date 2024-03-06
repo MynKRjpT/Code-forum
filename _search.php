@@ -14,12 +14,12 @@
             min-height: 100vh;
         }
     </style>
-    <title>Welcome to iTech - Coding Forums</title>
+    <title>Welcome to iDiscuss - Coding Forums</title>
 </head>
 
 <body>
-    <?php include '_dbconnect.php';?>
-    <?php include '_header.php';?>
+    <?php include 'partials/_dbconnect.php';?>
+    <?php include 'partials/_header.php';?>
     
 
     <!-- Search Results -->
@@ -62,7 +62,7 @@
   
   </div>
 
-    <?php include '_footer.php';?>
+    <?php include 'partials/_footer.php';?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

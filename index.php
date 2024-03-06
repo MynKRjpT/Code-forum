@@ -20,7 +20,7 @@
 <body>
 
     <?php include '_dbconnect.php';?>
-    <?php include_once '_header.php';?>
+    <?php include '_header.php';?>
 
 
     <!-- Slider starts here -->
