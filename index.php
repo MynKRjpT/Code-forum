@@ -2,124 +2,98 @@
 <html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to iTech Forum</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        #ques{
+            min-height: 433px;
+        }
+    </style>
+    <title>Welcome to iTech - Coding Forums</title>
 </head>
 
 <body>
-    <?php include '_header.php'; ?>
-    <div class="container">
-    <h2 class="text-center my-3"> iTech- Categories</h2>
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://source.unsplash.com/2100x700/?coding,code" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://source.unsplash.com/2100x700/?coding,technology" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://source.unsplash.com/2100x700/?coding,thoughts" class="d-block w-100" alt="...">
-                </div>
+
+    <?php include '_dbconnect.php';?>
+    <?php include_once '_header.php';?>
+
+
+    <!-- Slider starts here -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/slide1.jpg" class="d-block w-100" alt="...">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-           
+            <div class="carousel-item">
+                <img src="images/slide2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/slide2.jpg" class="d-block w-100" alt="...">
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card my-3" style="width: 18rem;">
-                    <img src="https://source.unsplash.com/500x400/?coding,java" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3" style="width: 18rem;">
-                    <img src="https://source.unsplash.com/500x400/?coding,java" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3" style="width: 18rem;">
-                    <img src="https://source.unsplash.com/500x400/?coding,java" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3" style="width: 18rem;">
-                    <img src="https://source.unsplash.com/500x400/?coding,java" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3" style="width: 18rem;">
-                    <img src="https://source.unsplash.com/500x400/?coding,java" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card my-3" style="width: 18rem;">
-                    <img src="https://source.unsplash.com/500x400/?coding,java" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Threads</a>
-                    </div>
-                </div>
-            </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Category container starts here -->
+    <div class="container my-4" id="ques">
+        <h2 class="text-center my-4">iTech - Categories</h2>
+        <div class="row my-4">
+          <!-- Fetch all the categories and use a loop to iterate through categories -->
+         <?php 
+         $sql = "SELECT * FROM `itechforum`"; 
+         $result = mysqli_query($conn, $sql);
+         while($row = mysqli_fetch_assoc($result)){
+          // echo $row['category_id'];
+          // echo $row['category_name'];
+          $id = $row['category_id'];
+          $cat = $row['category_name'];
+          $desc = $row['category_desc'];
+          echo '<div class="col-md-4 my-2">
+                  <div class="card" style="width: 18rem;">
+                      <img src="cardbg.jpg" class="card-img-top" alt="image for this category">
+                      <div class="card-body">
+                          <h5 class="card-title"><a href="threadlist.php?catid=' . $id . '">' . $cat . '</a></h5>
+                          <p class="card-text">' . substr($desc, 0, 90). '... </p>
+                          <a href="threadlist.php?catid=' . $id . '" class="btn btn-primary">View Threads</a>
+                      </div>
+                  </div>
+                </div>';
+         } 
+         ?>
+            
+ 
         </div>
     </div>
 
-
-
-    <?php include 'components/_footer.php'; ?>
+    <?php include '_footer.php';?>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-        integrity="sha384-Nd/zR5ei9g/EWhZk+9t2yhJQnJlNm0DLeL8lD3rN1op09vhE8HzNcCA06MDm+J6j" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-5KQSG5f/m6m6f5FkR8/RnFJXa+a5ORgeUpnXbYGh1iIc8hX8esuEhsusVehux2Fj" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
-
 </body>
 
 </html>

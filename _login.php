@@ -5,7 +5,7 @@
                 <h1 class="modal-title fs-5" id="loginModalLabel">Login Your Account</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="post">
+            <form action="_login.php" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="loginEmail">Username</label>
