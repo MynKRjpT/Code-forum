@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
     aria-hidden="true">
@@ -9,7 +10,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/Code-forum/_handleSignup.php" method="post">
+            <form action="_handlesignup.php" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>

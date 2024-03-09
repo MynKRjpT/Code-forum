@@ -4,23 +4,23 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Login to iDiscuss</h5>
+                <h5 class="modal-title" id="loginModalLabel">Login to itechforum</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/Code-forum/_handleLogin.php" method="post">
+            <form action="_handlelogin.php" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="loginEmail">Username</label>
-                        <input type="text" class="form-control" id="loginEmail" name="loginEmail"
+                        <input type="text" class="form-control" id="loginEmail" name="loginemail"
                             aria-describedby="emailHelp">
                         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
                             else.</small> -->
                     </div>
                     <div class="form-group">
                         <label for="loginPass">Password</label>
-                        <input type="password" class="form-control" id="loginPass" name="loginPass">
+                        <input type="password" class="form-control" id="loginPass" name="loginpass">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
