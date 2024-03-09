@@ -14,55 +14,66 @@
             min-height: 100vh;
         }
     </style>
-    <title>Welcome to iDiscuss - Coding Forums</title>
+    <title>Welcome to iTech - Coding Forums</title>
 </head>
 
 <body>
-    <?php include 'partials/_dbconnect.php';?>
-    <?php include 'partials/_header.php';?>
+    <?php include '_dbconnect.php';?>
+    <?php include '_header.php';?>
     
 
     <!-- Search Results -->
-  <div class="container my-3" id="maincontainer">
-        <h1 class="py-3">Search results for <em>"<?php echo $_GET['search']?>"</em></h1>
+    <div class="container my-3" id="maincontainer">
+    <h1 class="py-3">Search results for <em>"<?php echo $_GET['search']?>"</em></h1>
 
-        <?php  
-        $noresults = true;
-        $query = $_GET["search"];
-        $sql = "select * from threads where match (thread_title, thread_desc) against ('$query')"; 
-        $result = mysqli_query($conn, $sql);
-        while($row = mysqli_fetch_assoc($result)){
-            $title = $row['thread_title'];
-            $desc = $row['thread_desc']; 
-            $thread_id= $row['thread_id'];
-            $url = "thread.php?threadid=". $thread_id;
+    <?php  
+    $noresults = true;
+    $query = $_GET["search"];
+    $sql = "SELECT * FROM threads WHERE MATCH(thread_title, thread_desc) AGAINST ('$query')";
+    $result = mysqli_query($conn, $sql);
+
+    // Check if the query was successful
+    if ($result) {
+        // Check if there are any rows returned
+        if (mysqli_num_rows($result) > 0) {
             $noresults = false;
+            // Loop through the rows and display the search results
+            while($row = mysqli_fetch_assoc($result)){
+                $thread_title = $row['thread_title'];
+                $thread_desc = $row['thread_desc']; 
+                $thread_id = $row['thread_id'];
+                $url = "thread.php?thread_id=". $thread_id;
 
-            // Display the search result
-            echo '<div class="result">
-                        <h3><a href="'. $url. '" class="text-dark">'. $title. '</a> </h3>
-                        <p>'. $desc .'</p>
-                  </div>'; 
+                // Display the search result
+                echo '<div class="result">
+                            <h3><a href="'. $url. '" class="text-dark">'. $thread_title. '</a> </h3>
+                            <p>'. $thread_desc .'</p>
+                      </div>'; 
             }
-        if ($noresults){
-            echo '<div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <p class="display-4">No Results Found</p>
-                        <p class="lead"> Suggestions: <ul>
-                                <li>Make sure that all words are spelled correctly.</li>
-                                <li>Try different keywords.</li>
-                                <li>Try more general keywords. </li></ul>
-                        </p>
-                    </div>
-                 </div>';
-        }        
+        }
+    } else {
+        // Query failed
+        echo "An error occurred while fetching search results: " . mysqli_error($conn);
+    }
+
+    // If no results found, display a message
+    if ($noresults){
+        echo '<div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <p class="display-4">No Results Found</p>
+                    <p class="lead"> Suggestions: <ul>
+                            <li>Make sure that all words are spelled correctly.</li>
+                            <li>Try different keywords.</li>
+                            <li>Try more general keywords. </li></ul>
+                    </p>
+                </div>
+             </div>';
+    }        
     ?>
+</div>
 
 
-  
-  </div>
-
-    <?php include 'partials/_footer.php';?>
+    <?php include '_footer.php';?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -14,8 +14,8 @@
     </style>
   </head>
   <body>
-  <?php include 'partials/_dbconnect.php';?>
-  <?php include 'partials/_header.php';?>
+  <?php include '_dbconnect.php';?>
+  <?php include '_header.php';?>
 <div class="container my-3">
 <h1 class="text-center">Contact Us</h1>
 <form>
@@ -50,7 +50,7 @@
   <button class="btn btn-success">Submit</button>
 </form>
 </div>
-  <?php include 'partials/_footer.php';?> 
+  <?php include '_footer.php';?> 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
