@@ -29,6 +29,8 @@
     <?php  
     $noresults = true;
     $query = $_GET["search"];
+
+    // Prepare the query to include full-text search
     $sql = "SELECT * FROM threads WHERE MATCH(thread_title, thread_desc) AGAINST ('$query')";
     $result = mysqli_query($conn, $sql);
 
@@ -39,15 +41,15 @@
             $noresults = false;
             // Loop through the rows and display the search results
             while($row = mysqli_fetch_assoc($result)){
-                $thread_title = $row['thread_title'];
-                $thread_desc = $row['thread_desc']; 
+                $title = $row['thread_title'];
+                $desc = $row['thread_desc']; 
                 $thread_id = $row['thread_id'];
-                $url = "thread.php?thread_id=". $thread_id;
+                $url = "_thread.php?thread_id=". $thread_id;
 
                 // Display the search result
                 echo '<div class="result">
-                            <h3><a href="'. $url. '" class="text-dark">'. $thread_title. '</a> </h3>
-                            <p>'. $thread_desc .'</p>
+                            <h3><a href="'. $url. '" class="text-dark">'. $title. '</a> </h3>
+                            <p>'. $desc .'</p>
                       </div>'; 
             }
         }
@@ -71,7 +73,6 @@
     }        
     ?>
 </div>
-
 
     <?php include '_footer.php';?>
     <!-- Optional JavaScript -->

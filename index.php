@@ -71,9 +71,9 @@
                   <div class="card" style="width: 18rem;">
                       <img src="cardbg.jpg" class="card-img-top" alt="image for this category">
                       <div class="card-body">
-                          <h5 class="card-title"><a href="threadlist.php?catid=' . $id . '">' . $cat . '</a></h5>
-                          <p class="card-text">' . substr($desc, 0, 90). '... </p>
-                          <a href="threadlist.php?catid=' . $id . '" class="btn btn-primary">View Threads</a>
+                          <h5 class="card-title"><a href="_threadlist.php?category_id=' . $id . '">' . $cat . '</a></h5>
+                          <p class="card-text">' . substr($desc, 0, 45). '... </p>
+                          <a href="_threadlist.php?category_id=' . $id . '" class="btn btn-primary">View Threads</a>
                       </div>
                   </div>
                 </div>';

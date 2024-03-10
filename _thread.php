@@ -18,25 +18,59 @@
 </head>
 
 <body>
-    <?php include '_dbconnect.php';?>
-    <?php include '_header.php';?>
-    <?php
+<?php include '_dbconnect.php';?>
+<?php include '_header.php';?>
+
+<?php
+if(isset($_GET['threadid'])) {
     $id = $_GET['threadid'];
+    
+    // Ensure $id is an integer to prevent SQL injection
+    $id = intval($id);
+
     $sql = "SELECT * FROM `threads` WHERE thread_id=$id"; 
+
+    // Executing the SQL query and error handling
     $result = mysqli_query($conn, $sql);
+    if (!$result) {
+        printf("Error: %s\n", mysqli_error($conn));
+        exit();
+    }
+
     while($row = mysqli_fetch_assoc($result)){
         $title = $row['thread_title'];
         $desc = $row['thread_desc'];
         $thread_user_id = $row['thread_user_id'];
 
         // Query the users table to find out the name of OP
-        $sql2 = "SELECT user_email FROM `users` WHERE sno='$thread_user_id'";
+        $sql2 = "SELECT email FROM `users` WHERE sno='$thread_user_id'";
         $result2 = mysqli_query($conn, $sql2);
+
+        // Error handling
+        if (!$result2) {
+            printf("Error: %s\n", mysqli_error($conn));
+            exit();
+        }
+
+        // Fetching user data
         $row2 = mysqli_fetch_assoc($result2);
-        $posted_by = $row2['user_email'];
+
+        // Checking if data exists
+        if ($row2) {
+            $posted_by = $row2['email'];
+        } else {
+            $posted_by = "Unknown"; // Default value if no user found
+        }
     }
-    
-    ?>
+} else {
+    // Handle case where threadid is not provided in the URL
+    echo "Thread ID not provided.";
+    exit();
+}
+?>
+
+<!-- Your HTML code continues here -->
+
 
     <?php
     $showAlert = false;
@@ -114,14 +148,14 @@
         $comment_time = $row['comment_time']; 
         $thread_user_id = $row['comment_by']; 
 
-        $sql2 = "SELECT user_email FROM `users` WHERE sno='$thread_user_id'";
+        $sql2 = "SELECT email FROM `users` WHERE sno='$thread_user_id'";
         $result2 = mysqli_query($conn, $sql2);
         $row2 = mysqli_fetch_assoc($result2);
 
         echo '<div class="media my-3">
-            <img src="img/userdefault.png" width="54px" class="mr-3" alt="...">
+            <img src="images/userlogo.jpg" width="54px" class="mr-3" alt="...">
             <div class="media-body">
-               <p class="font-weight-bold my-0">'. $row2['user_email'] .' at '. $comment_time. '</p> '. $content . '
+               <p class="font-weight-bold my-0">'. $row2['email'] .' at '. $comment_time. '</p> '. $content . '
             </div>
         </div>';
 

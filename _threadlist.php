@@ -131,7 +131,7 @@ while($row = mysqli_fetch_assoc($result)){
     echo '<div class="media my-3">
         <img src="images/userlogo.jpg" width="54px" class="mr-3" alt="...">
         <div class="media-body">'.
-         '<h5 class="mt-0"> <a class="text-dark" href="thread.php?threadid=' . $thread_id. '">'. $thread_title . ' </a></h5>
+         '<h5 class="mt-0"> <a class="text-dark" href="_thread.php?threadid=' . $thread_id. '">'. $thread_title . ' </a></h5>
             '. $thread_desc . ' </div>'.'<div class="font-weight-bold my-0"> Asked by: '. $user_email . ' at '. $thread_time. '</div>'.
     '</div>';
 
